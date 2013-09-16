@@ -96,8 +96,8 @@ def get_upload_filename(upload_name, user):
     date_path = datetime.now().strftime('%Y/%m/%d')
 
     # Complete upload path (upload_path + date_path).
-    upload_path = os.path.join(settings.CKEDITOR_UPLOAD_PATH, user_path, \
-            date_path)
+    upload_path = os.path.join(settings.CKEDITOR_UPLOAD_PATH, user_path,
+                               date_path)
 
     # Make sure upload_path exists.
     if not os.path.exists(upload_path):
@@ -117,7 +117,6 @@ def upload(request):
     """
     # Get the uploaded file from request.
     upload = request.FILES['upload']
-    upload_ext = os.path.splitext(upload.name)[1]
 
     # Open output file in which to store upload.
     upload_filename = get_upload_filename(upload.name, request.user)
@@ -149,8 +148,8 @@ def get_image_files(user=None):
     """
     # If a user is provided and CKEDITOR_RESTRICT_BY_USER is True,
     # limit images to user specific path, but not for superusers.
-    if user and not user.is_superuser and getattr(settings, \
-            'CKEDITOR_RESTRICT_BY_USER', False):
+    if user and not user.is_superuser \
+            and getattr(settings, 'CKEDITOR_RESTRICT_BY_USER', False):
         user_path = user.username
     else:
         user_path = ''
