@@ -34,8 +34,11 @@
 					<ul class="thumbs noscript">
                         {% for image in images %}
 						<li>
-							<a class="thumb" href="{{ image.src }}">
+							<a class="thumb" href="{% if image.is_image %}{{ image.src }}{% else %}{{ image.thumb }}{% endif %}">
 								<img src="{{ image.thumb }}" />
+                                {% if image.visible_filename %}
+                                <span class="filename">{{ image.visible_filename }}</span>
+                                {% endif %}
 							</a>
 							<div class="caption">
                                 <div class="submit-row">
