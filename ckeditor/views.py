@@ -37,6 +37,7 @@ CKEDITOR_FILEICONS = getattr(settings, 'CKEDITOR_FILEICONS', [
     ('.*', fileicons_path + 'file.png'),  # Default
 ])
 
+
 def get_available_name(name):
     """
     Returns a filename that's free on the target storage system, and
@@ -61,6 +62,7 @@ def get_thumb_filename(file_name):
     """
     return '%s_thumb%s' % os.path.splitext(file_name)
 
+
 def get_icon_filename(file_name):
     """
     Return the path to a file icon that matches the file name.
@@ -68,6 +70,7 @@ def get_icon_filename(file_name):
     for regex, iconpath in CKEDITOR_FILEICONS:
         if re.search(regex, file_name, re.I):
             return iconpath
+
 
 def create_thumbnail(filename):
     image = Image.open(filename)
