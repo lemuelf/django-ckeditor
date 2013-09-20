@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>CKEDitor | Select an image to embed</title>
+		<title>CKEDitor | Select a file to embed</title>
 		<link rel="stylesheet" href="{{ STATIC_URL }}admin/css/base.css" type="text/css" />
 		<link rel="stylesheet" href="{{ STATIC_URL }}ckeditor/galleriffic/css/basic.css" type="text/css" />
 		<link rel="stylesheet" href="{{ STATIC_URL }}ckeditor/galleriffic/css/galleriffic-2.css" type="text/css" />
@@ -17,9 +17,9 @@
 		<div id="page">
 			<div id="container" style="width: 880px">
                 {% if images %}
-    				<h2>Browse for the image you want, then click 'Embed Image' to continue...</h2>
+    				<h2>Browse for the file you want, then click 'Embed File' to continue...</h2>
                 {% else %}
-				    <h2>No images found. Upload images using the 'Image Button' dialog's 'Upload' tab.</h2>
+				    <h2>No file found. Upload files using the dialog's 'Upload' tab.</h2>
                 {% endif %}
 
 				<!-- Start Advanced Gallery Html Containers -->
@@ -39,7 +39,7 @@
 							</a>
 							<div class="caption">
                                 <div class="submit-row">
-                                    <input href="{{ image.src }}" class="default embed" type="submit" name="_embed" value="Embed Image" />
+                                    <input href="{{ image.src }}" class="default embed" type="submit" name="_embed" value="Embed File" />
                                 </div>
 							</div>
 						</li>
